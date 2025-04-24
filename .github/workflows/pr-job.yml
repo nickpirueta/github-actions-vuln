@@ -10,4 +10,4 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Print PR title
-        run: echo $ {{ github.event.issue.title }}
+        run: echo "${{ github.event.pull_request.title }}"
