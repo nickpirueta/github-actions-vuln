@@ -1,0 +1,13 @@
+name: PR job
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Print PR title
+        run: echo $ {{ github.event.issue.title }}
