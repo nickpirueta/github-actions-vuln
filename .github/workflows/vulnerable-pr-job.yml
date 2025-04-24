@@ -10,4 +10,4 @@ jobs:
       - name: Print PR title
         run: echo ${{ github.event.pull_request.title }}
     env:
-      super_secret: ${{ SUPER_SECRET }}
+      super_secret: ${{ secrets.SUPER_SECRET }}
