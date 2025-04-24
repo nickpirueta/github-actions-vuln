@@ -1,13 +1,12 @@
-name: PR job
+name: Vulnerable PR job
 
 on:
   pull_request:
 
 jobs:
-  build:
+  vulnerable_print_pr_title:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
       - name: Print PR title
         run: echo ${{ github.event.pull_request.title }}
+  
