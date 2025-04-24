@@ -1,0 +1,15 @@
+name: Safe PR job
+
+on:
+  pull_request:
+
+jobs:
+  safe_print_pr_title:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print PR title
+        env:
+          TITLE: ${{ github.event.pull_request.title }}
+        run: echo "$TITLE"
+    env:
+      SUPER_SECRET: ${{ secrets.SUPER_SECRET }}
