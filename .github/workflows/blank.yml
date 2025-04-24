@@ -1,0 +1,14 @@
+name: Vulnerable PR job (if)
+
+on:
+  pull_request:
+
+jobs:
+  vulnerable_print_pr_title:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print PR title
+        if: "${{ contains(github.event.pull_request.body, 'test') }}"
+        run: echo ${{ github.event.pull_request.title }}
+    env:
+      SUPER_SECRET: ${{ secrets.SUPER_SECRET }}
