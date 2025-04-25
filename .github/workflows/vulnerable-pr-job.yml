@@ -1,7 +1,7 @@
 name: Vulnerable PR job
 
 on:
-  pull_request:
+  pull_request_target:
 
 jobs:
   vulnerable_print_pr_title:
