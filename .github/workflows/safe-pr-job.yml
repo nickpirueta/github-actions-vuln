@@ -1,7 +1,7 @@
 name: Safe PR job
 
 on:
-  pull_request:
+  pull_request_target:
 
 jobs:
   safe_print_pr_title:
@@ -10,6 +10,6 @@ jobs:
       - name: Print PR title
         env:
           TITLE: ${{ github.event.pull_request.title }}
-        run: echo "$TITLE"
+        run: echo "$TITLE" >> /tmp/pull_requests_history.txt
     env:
       SUPER_SECRET: ${{ secrets.SUPER_SECRET }}
